@@ -13,13 +13,13 @@
                 @endif
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Nama Kategori</label>
-                    <div class="position-relative input-icon">
+                    <div class="position-relative">
                         <input class="form-control mb-3" type="text" name="nama_kategori" placeholder="Nama Kategori" required>
                     </div>
                 </div>
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Foto</label>
-                    <div class="position-relative input-icon">
+                    <div class="position-relative">
                         <input class="form-control mb-3" type="file" name="foto" required>
                     </div>
                 </div>

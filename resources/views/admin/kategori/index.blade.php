@@ -11,7 +11,7 @@
                 </div>
                 @endif
         <div class="col-lg-2 pb-3 ms-auto">
-            <a href="{{ route('kategori.create') }}" class="btn btn-primary px-4 raised d-flex gap-2">
+            <a href="{{ route('kategori.create') }}" class="btn btn-primary px-4">
                 Tambah Kategori
             </a>
         </div>

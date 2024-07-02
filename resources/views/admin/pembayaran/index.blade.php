@@ -19,7 +19,7 @@
                 <tr>
 
                     <th scope="col">No</th>
-                    <th scope="col">Nama Pembayaran</th>
+                    <th scope="col">Nama Menu</th>
                     <th scope="col">Jumlah</th>
                     <th scope="col">Subtotal</th>
                     <th scope="col">Pajak</th>

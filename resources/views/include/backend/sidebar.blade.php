@@ -19,6 +19,20 @@
                     </div>
                     <div class="menu-title">Dashboard</div>
                 </a>
+            {{-- </li>
+            <li>
+                <a href="{{ route('kasir.index') }}">
+                    <div class="parent-icon"><i class="material-icons-outlined">description</i>
+                    </div>
+                    <div class="menu-title">Daftar Kasir</div>
+                </a>
+            </li> --}}
+            <li>
+                <a href="{{ route('user.index') }}">
+                    <div class="parent-icon"><i class="material-icons-outlined">description</i>
+                    </div>
+                    <div class="menu-title">Daftar Kasir</div>
+                </a>
             </li>
             <li class="menu-label">Pages</li>
 
@@ -43,6 +57,7 @@
                     <div class="menu-title">Pembayaran</div>
                 </a>
             </li>
+           
         </ul>
         <!--end navigation-->
     </div>

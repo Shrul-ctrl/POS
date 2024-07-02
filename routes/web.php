@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\KasirController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\menuController;
 use App\Http\Controllers\pembayaranController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\IsAdmin;
 
@@ -27,6 +29,10 @@ Route::group(['prefix' => 'admin' , 'middleware' => ['auth', IsAdmin::class]], f
     Route::resource('menu', menuController::class);
 
     Route::resource('pembayaran', pembayaranController::class);
+
+    Route::resource('kasir', KasirController::class);
+
+    Route::resource('user', UserController::class);
 });
 
 Route::get('/', function () {

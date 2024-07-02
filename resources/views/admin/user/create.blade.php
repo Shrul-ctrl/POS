@@ -6,8 +6,13 @@
             <h5 class="mb-4">Add User</h5>
             <form class="row g-3" method="POST" action="{{ route('user.store') }}">
                 @csrf
+                @if ($errors->has('email'))
+                <div class="alert alert-danger">
+                    {{ $errors->first('email') }}
+                </div>
+                @endif
                 <div class="col-md-4x">
-                    <label for="input13" class="form-label">Full Name</label>
+                    <label for="input13" class="form-label">Nama Lengkap</label>
                     <div class="position-relative">
                         <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="input13" value="{{ old('name') }}" placeholder="Full Name" required>
                         @error('name')
@@ -15,6 +20,29 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
+                    </div>
+                </div>
+                
+                <div class="col-md-4x">
+                    <label for="input13" class="form-label">Alamat</label>
+                    <div class="position-relative">
+                        <input type="text" name="alamat" class="form-control" placeholder="Masukkan Alamat" required>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="input19" class="form-label">Jenis Kelamin</label>
+                    <select id="input19" name="jenis_kelamin" class="form-select">
+                        <option selected="">Pilih...</option>
+                        <option>Laki-Laki</option>
+                        <option>Perempuan</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4x">
+                    <label for="input13" class="form-label">Kontrak</label>
+                    <div class="position-relative">
+                        <input type="text" name="kontrak" class="form-control" placeholder="Masukkan Kontrak" required>
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -46,11 +74,11 @@
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <label for="input19" class="form-label">Is Admin ?</label>
+                    <label for="input19" class="form-label">level</label>
                     <select id="input19" name="is_admin" class="form-select">
                         <option selected="">Choose...</option>
-                        <option value="0">No</option>
-                        <option value="1">Yes</option>
+                        <option value="0">User</option>
+                        <option value="1">Admin</option>
                     </select>
                 </div>
                 <div class="col-md-12">

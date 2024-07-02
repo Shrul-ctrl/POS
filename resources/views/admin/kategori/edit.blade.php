@@ -10,13 +10,13 @@
                 
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Nama Kategori</label>
-                    <div class="position-relative input-icon">
+                    <div class="position-relative">
                         <input class="form-control mb-3" type="text" name="nama_kategori" placeholder="Nama Kategori" value="{{$kategori->nama_kategori}}" required>
                     </div>
                 </div>
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Foto</label>
-                    <div class="position-relative input-icon">
+                    <div class="position-relative">
                         <img src="{{ asset('images/kategori/' . $kategori->foto) }}" class="pb-5" width="500" height="300" style="object-fit: cover;" alt="">
                         <input class="form-control mb-3" type="file" name="foto" required>
                     </div>

@@ -34,12 +34,12 @@
                 <tr>
                     <th scope="row">{{ $loop->index+1 }}</th>
                     <td>{{ $data->menu }}</td>
-                    <td>{{ $data->kategori }}</td>
+                    <td>{{ $data->kategori->nama_kategori }}</td>
                     <td>{{ $data->harga }}</td>
                     <td>{{ $data->pajak }}</td>
                     <td>{{ $data->stok }}</td>
                     <td>
-                        <img src="{{ asset('images/menu/' . $data->foto) }}"  width="200" height="100" style="object-fit: cover;"  alt="">
+                        <img src="{{ asset('images/menu/' . $data->gambar) }}"  width="200" height="100" style="object-fit: cover;"  alt="">
                     </td>
                     <td>
                         {{-- <a href="{{ route('menu.show', $data->id) }}" class="btn btn-primary gap-2"><i class="material-icons-outlined">search</i></a> --}}

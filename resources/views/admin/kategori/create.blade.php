@@ -4,7 +4,7 @@
     <div class="card">
         <div class="card-body p-4">
             <h5 class="mb-4">Tambah Kategori</h5>
-            <form class="row g-3" method="POST" action="{{ route('kategori.store') }}">
+            <form class="row g-3" method="POST" action="{{ route('kategori.store') }}" enctype="multipart/form-data">
                 @csrf
                 @if ($errors->has('nama_kategori'))
                 <div class="alert alert-danger">

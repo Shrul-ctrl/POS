@@ -46,7 +46,7 @@
                             <form class="row g-3" method="POST" action="{{ route('register') }}">
                                 @csrf
                                 <div class="col-12">
-                                    <label for="name" class="form-label">Username</label>
+                                    <label for="name" class="form-label">Nama</label>
                                     <input type="text" class="form-control  @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Enter name">
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -54,6 +54,33 @@
                                     </span>
                                     @enderror
                                 </div>
+                                {{-- <div class="col-12">
+                                    <label for="alamat" class="form-label">Alamat</label>
+                                    <input type="text" class="form-control  @error('alamat') is-invalid @enderror" id="alamat" alamat="alamat" value="{{ old('alamat') }}" required autocomplete="alamat" autofocus placeholder="Enter alamat">
+                                    @error('alamat')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="col-12">
+                                    <label for="jenis_kelamin" class="form-label">jenis_kelamin</label>
+                                    <input type="text" class="form-control  @error('jenis_kelamin') is-invalid @enderror" id="jenis_kelamin" jenis_kelamin="jenis_kelamin" value="{{ old('jenis_kelamin') }}" required autocomplete="jenis_kelamin" autofocus placeholder="Enter jenis_kelamin">
+                                    @error('jenis_kelamin')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="col-12">
+                                    <label for="kontrak" class="form-label">kontrak</label>
+                                    <input type="text" class="form-control  @error('kontrak') is-invalid @enderror" id="kontrak" kontrak="kontrak" value="{{ old('kontrak') }}" required autocomplete="kontrak" autofocus placeholder="Enter kontrak">
+                                    @error('kontrak')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div> --}}
                                 <div class="col-12">
                                     <label for="email" class="form-label">Email Address</label>
                                     <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Enter Email">

@@ -21,7 +21,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::orderBy('id', 'desc')->get();
+        $user = User::orderBy('id', 'asc')->get();
         return view('admin.user.index', compact('user'));
     }
 
@@ -42,16 +42,24 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+        ],
+        [
+            'email.required' => 'Email harus diisi',
+            'email.unique' => 'Email dengan nama tersebut sudah ada sebelumnya.',
+        ]
+    );
 
         $user = new User();
         $user->name = $request->name;
+        $user->alamat = $request->alamat;
+        $user->jenis_kelamin = $request->jenis_kelamin;
+        $user->kontrak = $request->kontrak;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->is_admin = $request->is_admin;
         $user->save();
 
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')->with('success', 'berhasil didaftarkan');
     }
 
     /**
@@ -85,10 +93,13 @@ class UserController extends Controller
         ]);
 
         $user->name = $request->name;
+        $user->alamat = $request->alamat;
+        $user->jenis_kelamin = $request->jenis_kelamin;
+        $user->kontrak = $request->kontrak;
         $user->email = $request->email;
         $user->is_admin = $request->is_admin;
         $user->save();
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')->with('success', 'Data berhasil diubah');
     }
 
     /**
@@ -98,7 +109,7 @@ class UserController extends Controller
     {
         if (Auth::user()->id != $user->id) {
             $user->delete();
-            return redirect()->route('user.index');
+            return redirect()->route('user.index')->with('success', 'Data berhasil dihapus');
         }
         return redirect()->route('user.index');
     }

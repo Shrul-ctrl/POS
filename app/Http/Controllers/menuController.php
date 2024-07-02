@@ -90,8 +90,10 @@ class menuController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Menu $menu)
+    
     {
-        return view('admin.menu.edit', compact('menu'));
+        $kategori = kategori::all();
+        return view('admin.menu.edit', compact('menu','kategori'));
     }
 
     /**
@@ -104,7 +106,7 @@ class menuController extends Controller
     public function update(Request $request,menu $menu)
     {
         $menu->menu = $request->menu;
-        $menu->kategori = $request->kategori;
+        $menu->id_kategori = $request->id_kategori;
         $menu->harga = $request->harga;
         $menu->pajak = $request->pajak;
         $menu->stok = $request->stok;

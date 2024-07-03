@@ -5,7 +5,7 @@ use App\Http\Controllers\menuController;
 use App\Http\Controllers\pembayaranController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Middleware\IsAdmin;
+use App\Http\Middleware\IsAdmin; 
 
 /*
 |--------------------------------------------------------------------------

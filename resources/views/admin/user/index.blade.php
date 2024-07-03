@@ -41,7 +41,7 @@
                     <td>
                         
                         <a href="{{ route('user.edit', $data->id) }}" class="btn btn-grd btn-warning px-5">Edit</a>
-                        <a class="btn btn-grd btn-danger px-5" href="{{ route('user.destroy', $data->id) }}" onclick="event.preventDefault(); document.getElementById('destroy-form').submit();return confirm('Apakah anda yakin ingin menghapus??')">Hapus</a>
+                        <button class="btn btn-grd btn-danger px-5" href="{{ route('user.destroy', $data->id) }}" onclick="event.preventDefault(); document.getElementById('destroy-form').submit();return confirm('Apakah anda yakin ingin menghapus??')">Hapus</button>
 
                         <form id="destroy-form" action="{{ route('user.destroy', $data->id) }}"
                             method="POST" class="d-none">

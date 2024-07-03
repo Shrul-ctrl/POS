@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\KasirController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\menuController;
 use App\Http\Controllers\pembayaranController;
@@ -30,7 +29,6 @@ Route::group(['prefix' => 'admin' , 'middleware' => ['auth', IsAdmin::class]], f
 
     Route::resource('pembayaran', pembayaranController::class);
 
-    Route::resource('kasir', KasirController::class);
 
     Route::resource('user', UserController::class);
 });

@@ -32,13 +32,13 @@
                         <input class="form-control mb-3" type="text" name="harga" placeholder="Harga" value="{{$menu->harga}}" required>
                     </div>
                 </div>
-
+{{-- 
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Pajak</label>
                     <div class="position-relative">
                         <input class="form-control mb-3" type="text" name="pajak" placeholder="Pajak" value="{{$menu->pajak}}" required>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Stok</label>

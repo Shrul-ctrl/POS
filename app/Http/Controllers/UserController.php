@@ -109,8 +109,8 @@ class UserController extends Controller
     {
         if (Auth::user()->id != $user->id) {
             $user->delete();
-            return redirect()->route('user.index')->with('success', 'Data berhasil dihapus');
+            return redirect()->route('user.index');
         }
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')->with('success', 'Data berhasil dihapus');
     }
-}
+}   

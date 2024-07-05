@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KasirController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\menuController;
 use App\Http\Controllers\pembayaranController;
@@ -29,15 +30,17 @@ Route::group(['prefix' => 'admin' , 'middleware' => ['auth', IsAdmin::class]], f
 
     Route::resource('pembayaran', pembayaranController::class);
 
-
     Route::resource('user', UserController::class);
 });
 
-Route::get('/', function () {
-    return view('layouts.backend');
-})-> middleware('auth');
+Route::group(['prefix' => 'kasir'], function () {
+
+Route::get('',[KasirController::class,'menampilkan'])->name('kasir');
+Route::get('{id}',[KasirController::class,'show'])->name('kasirshow');
+
+});
 
 Auth::routes(
 );
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

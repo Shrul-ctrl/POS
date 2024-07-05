@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
     use HasFactory;
-    protected $fillable = ['id','menu','id_kategori', 'harga', 'pajak', 'stok', 'gambar'];
+    protected $fillable = ['id','menu','id_kategori', 'harga', 'stok', 'gambar'];
     public $timestamps = true;
     public function kategori()
     {

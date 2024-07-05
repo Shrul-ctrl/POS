@@ -1,6 +1,6 @@
 @extends('layouts.backend')
 @section('content')
-<div class="row">
+<div class="row" >
     <div class="col-12 col-lg-4 col-xxl-4 d-flex">
         <div class="card rounded-4 w-100 bg">
             <div class="card-body">

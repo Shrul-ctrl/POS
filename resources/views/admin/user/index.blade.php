@@ -15,7 +15,7 @@
             </a>
         </div>
         <table class="table mb-0">
-            <thead class="table-dark">
+            <thead class="table">
                 <tr>
                     <th scope="col">No</th>
                     <th scope="col">Nama Kasir</th>

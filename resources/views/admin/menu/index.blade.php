@@ -14,6 +14,7 @@
             <a href="{{ route('menu.create') }}" class="btn btn-primary px-4">
                 Tambah Menu
             </a>
+            @foreach ($kategori as $data)
         </div>
         <table class="table mb-0 table-striped">
             <thead>
@@ -23,7 +24,6 @@
                     <th scope="col">Nama menu</th>
                     <th scope="col">Kategori</th>
                     <th scope="col">Harga</th>
-                    <th scope="col">Pajak</th>
                     <th scope="col">Stok</th>
                     <th scope="col">Gambar</th>
                     <th scope="col">Aksi</th>
@@ -36,7 +36,6 @@
                     <td>{{ $data->menu }}</td>
                     <td>{{ $data->kategori->nama_kategori }}</td>
                     <td>{{ $data->harga }}</td>
-                    <td>{{ $data->pajak }}</td>
                     <td>{{ $data->stok }}</td>
                     <td>
                         <img src="{{ asset('images/menu/' . $data->gambar) }}"  width="200" height="100" style="object-fit: cover;"  alt="">

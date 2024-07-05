@@ -16,10 +16,12 @@ class menuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $menu = Menu::orderBy('id', 'desc')->get();
-        return view('admin.menu.index', compact('menu'));
+        $kategori = Kategori::all();
+        
+        return view('admin.menu.index', compact('menu','kategori'));
     }
 
     /**
@@ -55,7 +57,6 @@ class menuController extends Controller
         $menu->menu = $request->menu;
         $menu->id_kategori = $request->id_kategori;
         $menu->harga = $request->harga;
-        $menu->pajak = $request->pajak;
         $menu->stok = $request->stok;
         $menu->gambar = $request->gambar;
 
@@ -81,7 +82,7 @@ class menuController extends Controller
     public function show(Menu $menu)
     {
         return view('admin.menu.show', compact('menu'));
-    }
+    }               
 
     /**
      * Show the form for editing the specified resource.
@@ -108,7 +109,6 @@ class menuController extends Controller
         $menu->menu = $request->menu;
         $menu->id_kategori = $request->id_kategori;
         $menu->harga = $request->harga;
-        $menu->pajak = $request->pajak;
         $menu->stok = $request->stok;
         $menu->gambar = $request->gambar;
 

@@ -40,12 +40,12 @@
                     </div>
                 </div> --}}
 
-                <div class="col-md-4x">
+                {{-- <div class="col-md-4x">
                     <label for="input13" class="form-label">Stok</label>
                     <div class="position-relative">
                         <input class="form-control mb-3" type="text" name="stok" placeholder="Nama menu" value="{{$menu->stok}}" required>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Foto</label>

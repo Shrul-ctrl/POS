@@ -49,7 +49,6 @@ class pembayaranController extends Controller
         $pembayaran->total = $request->total;
         $pembayaran->kembali = $request->kembali;
         $pembayaran->save();
-
         return redirect()->route('pembayaran.index')->with('success', 'Data berhasil ditambah');
     }
     
@@ -84,7 +83,8 @@ class pembayaranController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, pembayaran $pembayaran)
-    {
+    {   
+
         $pembayaran->id_menu = $request->id_menu;
         $pembayaran->jumlah = $request->jumlah;
         $pembayaran->subtotal = $request->subtotal;

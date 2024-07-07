@@ -1,6 +1,6 @@
 @extends('layouts.backend')
 @section('content')
-<div class="row" >
+<div class="row">
     <div class="col-12 col-lg-4 col-xxl-4 d-flex">
         <div class="card rounded-4 w-100 bg">
             <div class="card-body">
@@ -62,7 +62,7 @@
             <div class="card-body">
                 <div class="d-flex align-items-start justify-content-between mb-3">
                     <div class="">
-                        <h5 class="mb-0">Menu Terlaris</h5>
+                        <h5 class="mb-0">Daftar Kasir</h5>
                     </div>
                     <div class="dropdown">
                         <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle" data-bs-toggle="dropdown">
@@ -74,11 +74,18 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama Menu</th>
-                                <th>Terjual</th>
+                                <th>Nama kasir</th>
+                                <th>Kontrak</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($user as $data)
+                                <tr>
+                                    <th scope="row">{{ $loop->index+1 }}</th>
+                                    <td>{{$data->name}}</td>
+                                    <td>{{$data->kontrak}}</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -90,28 +97,36 @@
             <div class="card-body">
                 <div class="d-flex align-items-start justify-content-between mb-3">
                     <div class="">
-                        <h5 class="mb-0">Stok Habis</h5>
+                        <h5 class="mb-0">Menu Terlaris</h5>
                     </div>
                     <div class="dropdown">
                         <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle" data-bs-toggle="dropdown">
                         </a>
                     </div>
                 </div>
-                <div class="table-responsive">
-                    <table class="table align-middle mb-0 table-striped">
+                <div class="table-responsive" style="height: 20rem">
+                    <table class="table align-middle mb-0 table-striped" >
                         <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Nama Menu</th>
-                                <th>Stok</th>
+                                <th>Terjual</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($menu as $data)
+                            <tr>
+                                <th scope="row">{{ $loop->index+1 }}</th>
+                                <td>{{$data->menu}}</td>
+                                <td>{{$data->harga}}</td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 @endsection

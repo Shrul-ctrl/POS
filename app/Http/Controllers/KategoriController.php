@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kategori;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rule;
 
 class KategoriController extends Controller
 {
@@ -51,16 +48,6 @@ class KategoriController extends Controller
     
         $kategori = new Kategori();
         $kategori->nama_kategori = $request->nama_kategori;
-        $kategori->foto = $request->foto;
-
-        // update img
-         if ($request->hasFile('foto')) {
-            $img = $request->file('foto');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/kategori', $name);
-            $kategori->foto = $name;
-        }
-
         $kategori->save();
 
         return redirect()->route('kategori.index')->with('success', 'Data berhasil ditambah');
@@ -100,17 +87,6 @@ class KategoriController extends Controller
     {
 
         $kategori->nama_kategori = $request->nama_kategori;
-        $kategori->foto = $request->foto;
-
-        // delete img
-        if ($request->hasFile('foto')) {
-            $kategori ->deleteImage();
-            $img = $request->file('foto');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('images/kategori', $name);
-            $kategori->foto = $name;
-        }
-
         $kategori->save();
         return redirect()->route('kategori.index')->with('success', 'Data berhasil diubah');
     }
@@ -122,7 +98,7 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        $kategori = kategori::FindOrFail($id);
+        $kategori = Kategori::FindOrFail($id);
         $kategori->delete();
         return redirect()->route('kategori.index')->with('success', 'Data berhasil dihapus');
     }

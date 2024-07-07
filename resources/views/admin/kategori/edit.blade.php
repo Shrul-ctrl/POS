@@ -14,14 +14,6 @@
                         <input class="form-control mb-3" type="text" name="nama_kategori" placeholder="Nama Kategori" value="{{$kategori->nama_kategori}}" required>
                     </div>
                 </div>
-                <div class="col-md-4x">
-                    <label for="input13" class="form-label">Foto</label>
-                    <div class="position-relative">
-                        <img src="{{ asset('images/kategori/' . $kategori->foto) }}" class="pb-5" width="500" height="300" style="object-fit: cover;" alt="">
-                        <input class="form-control mb-3" type="file" name="foto" required>
-                    </div>
-                </div>
-
                 <div class="col-md-12">
                     <div class="d-md-flex d-grid align-items-center gap-3">
                         <a href="{{route('kategori.index')}}" class="btn btn-danger px-4">Batal</a>

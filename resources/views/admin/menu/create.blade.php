@@ -11,7 +11,7 @@
                 <div class="alert alert-danger">
                     {{ $errors->first('menu') }}
                 </div>
-                @endif
+                @endif  
 
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Nama Menu</label>
@@ -45,12 +45,12 @@
                     </div>
                 </div> --}}
 
-                <div class="col-md-4x">
+                {{-- <div class="col-md-4x">
                     <label for="input13" class="form-label">Stok</label>
                     <div class="position-relative ">
                         <input class="form-control mb-3" type="number" name="stok" placeholder="Stok" required>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Foto</label>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Menu;
 use App\Models\Kategori;
+use App\Models\Pembayaran;
 use Illuminate\Http\Request;
 
 class KasirController extends Controller
@@ -11,20 +12,21 @@ class KasirController extends Controller
     public function menampilkan(Request $request){
         $menu = Menu::all();
         $kategori = Kategori::all();
-
-        // $id = $request->get('id');
-        // if ($id) {
-        //     $menu = Menu::where('id', $id)->get();
-        // }else {
-        //     $menu = Menu::orderBy('created_at', 'desc')->get();
-        // }
-   return view('kasir.frontend', compact('menu','kategori'));
+        $pembayaran = Pembayaran::all();
+   return view('kasir.frontend', compact('menu','pembayaran','kategori'));
     }
 
-    public function show($id)
+    public function show(menu $menu, kategori $kategori)
     {
-        $menu = Menu::findOrFail($id);
-        return view('kasir.show', compact('menu'));
+        $menu = Menu::findOrFail($menu);
+        $kategori = Kategori::findOrFail($kategori);
+        return view('kasir.frontend',compact('menu','kategori'));
     }
+
+
+   
+    
+    
+
 
 }

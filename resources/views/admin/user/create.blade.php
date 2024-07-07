@@ -26,7 +26,7 @@
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Alamat</label>
                     <div class="position-relative">
-                        <input type="text" name="alamat" class="form-control" placeholder="Masukkan Alamat" required>
+                        <textarea class="form-control"  name="alamat" placeholder="Masukkan Alamat" required></textarea>
                     </div>
                 </div>
 

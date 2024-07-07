@@ -14,7 +14,6 @@
             <a href="{{ route('menu.create') }}" class="btn btn-primary px-4">
                 Tambah Menu
             </a>
-            @foreach ($kategori as $data)
         </div>
         <table class="table mb-0 table-striped">
             <thead>
@@ -24,7 +23,6 @@
                     <th scope="col">Nama menu</th>
                     <th scope="col">Kategori</th>
                     <th scope="col">Harga</th>
-                    <th scope="col">Stok</th>
                     <th scope="col">Gambar</th>
                     <th scope="col">Aksi</th>
                 </tr>
@@ -36,7 +34,6 @@
                     <td>{{ $data->menu }}</td>
                     <td>{{ $data->kategori->nama_kategori }}</td>
                     <td>{{ $data->harga }}</td>
-                    <td>{{ $data->stok }}</td>
                     <td>
                         <img src="{{ asset('images/menu/' . $data->gambar) }}"  width="200" height="100" style="object-fit: cover;"  alt="">
                     </td>
@@ -44,11 +41,11 @@
                         {{-- <a href="{{ route('menu.show', $data->id) }}" class="btn btn-primary gap-2"><i class="material-icons-outlined">search</i></a> --}}
                         <a href="{{ route('menu.edit', $data->id) }}" class="btn btn-warning px-5">Edit</a>
                         <a class="btn ripple btn-danger px-5" href="{{ route('menu.destroy', $data->id) }}" onclick="event.preventDefault();
-                            document.getElementById('destroy-form').submit();return confirm('Apakah anda yakin??')">
+                            document.getElementById('destroy-form {{ $data->id }}').submit();return confirm('Apakah anda yakin??')">
                             Hapus
                         </a>
 
-                        <form id="destroy-form" action="{{ route('menu.destroy', $data->id) }}"
+                        <form id="destroy-form {{ $data->id }}" action="{{ route('menu.destroy', $data->id) }}"
                             method="POST" class="d-none">
                             @method('DELETE')
                             @csrf

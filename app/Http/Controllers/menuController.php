@@ -19,8 +19,8 @@ class menuController extends Controller
     public function index(Request $request)
     {
         $menu = Menu::orderBy('id', 'desc')->get();
-        $kategori = Kategori::all();
-        
+        $kategori = Kategori::orderBy('id', 'desc')->get();
+
         return view('admin.menu.index', compact('menu','kategori'));
     }
 
@@ -57,7 +57,6 @@ class menuController extends Controller
         $menu->menu = $request->menu;
         $menu->id_kategori = $request->id_kategori;
         $menu->harga = $request->harga;
-        $menu->stok = $request->stok;
         $menu->gambar = $request->gambar;
 
         // update img
@@ -109,7 +108,6 @@ class menuController extends Controller
         $menu->menu = $request->menu;
         $menu->id_kategori = $request->id_kategori;
         $menu->harga = $request->harga;
-        $menu->stok = $request->stok;
         $menu->gambar = $request->gambar;
 
         // delete img
@@ -138,4 +136,5 @@ class menuController extends Controller
         $menu->delete();
         return redirect()->route('menu.index')->with('success', 'Data berhasil dihapus');
     }
+    
 }

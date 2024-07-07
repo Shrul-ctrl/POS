@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('pembayarans', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_menu');
-            $table->integer('jumlah');
-            $table->integer('subtotal');
-            $table->integer('pajak');
-            $table->integer('total');
-            $table->integer('kembali');
+            $table->unsignedBigInteger('id_menu')->nullable();
+            $table->integer('jumlah')->nullable();
+            $table->integer('subtotal')->nullable();
+            $table->integer('pajak')->nullable();
+            $table->integer('total')->nullable();
+            $table->integer('kembali')->nullable();
             $table->timestamps();
         });
     }

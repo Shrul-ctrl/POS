@@ -14,11 +14,23 @@ class IsAdmin
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
+    // public function handle(Request $request, Closure $next)
+    // {
+    //     if (Auth::user()->is_admin == 1) {
+    //         return $next($request);
+    //     }
+    //     return abort(403);
+    // }   
+
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->is_admin == 1) {
-            return $next($request);
+        if(auth()->check()){
+            if(auth()->user()->is_admin == 1){
+                return $next($request);
+            }
+            else {
+                return to_route('kasir');
+            }
         }
-        return abort(403);
-    }   
+    }
 }

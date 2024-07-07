@@ -21,7 +21,6 @@
                    
                     <th scope="col">No</th>
                     <th scope="col">Nama Kategori</th>
-                    <th scope="col">Foto</th>
                     <th scope="col">Aksi</th>
                 </tr>
             </thead>
@@ -31,14 +30,11 @@
                     <th scope="row">{{ $loop->index+1 }}</th>
                     <td>{{ $data->nama_kategori }}</td>
                     <td>
-                        <img src="{{ asset('images/kategori/' . $data->foto) }}"  width="200" height="100" style="object-fit: cover;"  alt="">
-                    </td>
-                    <td>
                         {{-- <a href="{{ route('kategori.show', $data->id) }}" class="btn btn-primary gap-2"><i class="material-icons-outlined">search</i></a> --}}
                         <a href="{{ route('kategori.edit', $data->id) }}" class="btn btn-warning px-5">Edit</a>
-                        <a class="btn ripple btn-danger px-5" href="{{ route('kategori.destroy', $data->id) }}" onclick="event.preventDefault(); document.getElementById('destroy-form').submit();return confirm('Apakah anda yakin ingin menghapus??')">Hapus</a>
+                        <a class="btn ripple btn-danger px-5" href="{{ route('kategori.destroy', $data->id) }}" onclick="event.preventDefault(); document.getElementById('destroy-form {{ $data->id }}').submit();return confirm('Apakah anda yakin ingin menghapus??')">Hapus</a>
 
-                        <form id="destroy-form" action="{{ route('kategori.destroy', $data->id) }}"
+                        <form id="destroy-form {{$data->id}}" action="{{ route('kategori.destroy', $data->id) }}"
                             method="POST" class="d-none">
                             @method('DELETE')
                             @csrf

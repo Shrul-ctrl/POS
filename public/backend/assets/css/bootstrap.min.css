@@ -10902,13 +10902,13 @@ textarea.form-control-lg {
 	overflow: hidden;
   }	
   .img-hover-zoom img {
-	  transition: transform .5s ease;
+	  transition: transform .6s ease;
 	  object-fit: cover;
-	  width: 300px;
+	  width: 240px;
 	  height: 170px;
   }
   
   .img-hover-zoom:hover img {
-	transform: scale(1.3);
+	transform: scale(1.1);
   }
 /*# sourceMappingURL=bootstrap.min.css.map */

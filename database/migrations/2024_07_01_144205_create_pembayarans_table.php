@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('pembayarans', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_menu')->nullable();
+            $table->unsignedBigInteger('id_user')->nullable();
             $table->integer('jumlah')->nullable();
             $table->integer('subtotal')->nullable();
             $table->integer('pajak')->nullable();

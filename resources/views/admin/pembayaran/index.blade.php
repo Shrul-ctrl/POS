@@ -32,7 +32,7 @@
                 @foreach ($pembayaran as $data)
                 <tr>
                     <th scope="row">{{ $loop->index+1 }}</th>
-                    <td>{{ $data->pembayaran }}</td>
+                    <td>{{ $data->menu }}</td>
                     <td>{{ $data->jumlah }}</td>
                     <td>{{ $data->subtotal }}</td>
                     <td>{{ $data->pajak }}</td>

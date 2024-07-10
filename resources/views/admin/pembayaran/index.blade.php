@@ -24,6 +24,7 @@
                     <th scope="col">Subtotal</th>
                     <th scope="col">Pajak</th>
                     <th scope="col">Total</th>
+                    <th scope="col">Bayar</th>
                     <th scope="col">Kembali</th>
                     <th scope="col">Aksi</th>
                 </tr>
@@ -37,17 +38,21 @@
                     <td>{{ $data->subtotal }}</td>
                     <td>{{ $data->pajak }}</td>
                     <td>{{ $data->total }}</td>
+                    <td>{{ $data->bayar }}</td>
                     <td>{{ $data->kembali }}</td>
 
                     <td>
                         {{-- <a href="{{ route('pembayaran.show', $data->id) }}" class="btn btn-primary gap-2"><i class="material-icons-outlined">search</i></a> --}}
                         <a href="{{ route('pembayaran.edit', $data->id) }}" class="btn btn-warning px-5">Edit</a>
                         <a class="btn ripple btn-danger px-5" href="{{ route('pembayaran.destroy', $data->id) }}" onclick="event.preventDefault();
-                            document.getElementById('destroy-form').submit();return confirm('Apakah anda yakin??')">
+                            document.getElementById('destroy-form {{ $data->id }}').submit();return confirm('Apakah anda yakin??')">
                             Hapus
                         </a>
 
-                        <form id="destroy-form" action="{{ route('pembayaran.destroy', $data->id) }}" method="POST" class="d-none">
+                        <form id="destroy-form {{ $data->id }}" action="{{ route('pembayaran.destroy', $data->id) }}"
+                            method="POST" class="d-none">
+
+                            
                             @method('DELETE')
                             @csrf
                         </form>

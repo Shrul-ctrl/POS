@@ -41,15 +41,16 @@ class pembayaranController extends Controller
      */
     public function store(Request $request)
     {    
+        
         $pembayaran = new pembayaran();
-        $pembayaran->id_menu = $request->id_menu;
-        $pembayaran->jumlah = $request->jumlah;
+        $pembayaran->menu = $request->menu;
         $pembayaran->subtotal = $request->subtotal;
         $pembayaran->pajak = $request->pajak;
         $pembayaran->total = $request->total;
+        $pembayaran->bayar = $request->bayar;
         $pembayaran->kembali = $request->kembali;
         $pembayaran->save();
-        return redirect()->route('pembayaran.index')->with('success', 'Data berhasil ditambah');
+        return redirect()->route('kasir')->with('success', 'Data berhasil ditambah');
     }
     
 
@@ -61,7 +62,7 @@ class pembayaranController extends Controller
      */
     public function show(pembayaran $pembayaran)
     {
-        return view('admin.pembayaran.show', compact('pembayaran'));
+        // return view('admin.pembayaran.show', compact('pembayaran'));
     }
 
     /**
@@ -85,11 +86,12 @@ class pembayaranController extends Controller
     public function update(Request $request, pembayaran $pembayaran)
     {   
 
-        $pembayaran->id_menu = $request->id_menu;
+        $pembayaran->menu = $request->menu;
         $pembayaran->jumlah = $request->jumlah;
         $pembayaran->subtotal = $request->subtotal;
         $pembayaran->pajak = $request->pajak;
         $pembayaran->total = $request->total;
+        $pembayaran->bayar = $request->bayar;
         $pembayaran->kembali = $request->kembali;
         $pembayaran->save();
         return redirect()->route('pembayaran.index')->with('success', 'Data berhasil diubah');

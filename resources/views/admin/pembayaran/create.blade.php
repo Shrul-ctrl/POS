@@ -17,11 +17,8 @@
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Nama Menu</label>
                     <div class="position-relative input-icon">
-                        <select class="form-control mb-3" name="id_menu" placeholder="menu" required>
-                            @foreach ($menu as $data)
-                            <option value="{{ $data->id }}">{{ $data->menu }} </option>
-                            @endforeach
-                        </select>
+                            <input class="form-control mb-3" type="text" name="menu" placeholder="Menu" required>
+
                     </div>
                 </div>
 
@@ -50,6 +47,13 @@
                     <label for="input13" class="form-label">Total</label>
                     <div class="position-relative input-icon">
                         <input class="form-control mb-3" type="text" name="total" placeholder="Total" required>
+                    </div>
+                </div>
+
+                <div class="col-md-4x">
+                    <label for="input13" class="form-label">Bayar</label>
+                    <div class="position-relative input-icon">
+                        <input class="form-control mb-3" type="text" name="bayar" placeholder="Bayar" required>
                     </div>
                 </div>
 

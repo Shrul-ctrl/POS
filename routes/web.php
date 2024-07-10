@@ -8,7 +8,7 @@ use App\Http\Controllers\pembayaranController;
 use App\Http\Controllers\RekapanController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Middleware\IsAdmin; 
+use App\Http\Middleware\IsAdmin;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,26 +21,19 @@ use App\Http\Middleware\IsAdmin;
 |
 */
 
-Route::group(['prefix' => 'admin' , 'middleware' => ['auth', IsAdmin::class]], function () {
-    Route::get('',[DashboardController::class,'index'])->name('dashboard');
-    
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], function () {
+    Route::get('', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('kategori', KategoriController::class);
-
     Route::resource('menu', menuController::class);
-
     Route::resource('pembayaran', pembayaranController::class);
-
-
     Route::resource('user', UserController::class);
 });
 
 Route::group(['prefix' => 'kasir'], function () {
-
-Route::get('',[KasirController::class,'menampilkan'])->name('kasir');
-Route::get('{id}',[KasirController::class,'show'])->name('kasirshow');
-Route::get('bayar',[KasirController::class,'bayar'])->name('bayar');
-Route::get('search',[KasirController::class,'search'])->name('search');
-
+    Route::get('', [KasirController::class, 'menampilkan'])->name('kasir');
+    Route::get('{id}', [KasirController::class, 'show'])->name('kasirshow');
+    Route::get('bayar', [KasirController::class, 'bayar'])->name('bayar');
+    Route::get('search', [KasirController::class, 'search'])->name('search');
 });
 
 Auth::routes();
@@ -50,7 +43,7 @@ Route::get('user/home', [App\Http\Controllers\User\HomeController::class, 'index
 
 
 Route::get('/', function () {
-    
+
 })->middleware('auth');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

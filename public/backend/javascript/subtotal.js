@@ -1,2 +1,0 @@
-
-var subtotal = 0;

@@ -4,7 +4,7 @@
             {{-- <img src="{{asset('backend/assets/images/logo-icon.png')}}" class="logo-img" alt=""> --}}
         </div>
         <div class="logo-name flex-grow-1">
-            <h5 class="mb-0">Dashboard</h5>
+            <h5 class="mb-0">Admin POS</h5>
         </div>
         <div class="sidebar-close">
             <span class="material-icons-outlined">close</span>

@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-12 col-lg-4 col-xxl-4 d-flex">
         <div class="card rounded-4 w-100 bg">
-            <div class="card-body">
+            <div class="card-body" style="padding-bottom: 60px">
                 <div class="">
                     <div class="d-flex align-items-center gap-2 mb-2">
                         <h5 class="mb-0">Penjualan Hari ini</h5>
@@ -13,7 +13,7 @@
                             <h3 class="mb-0 text-indigo">Rp 5.000.000</h3>
                             {{-- <button class="btn btn-grd btn-grd-primary rounded-5 border-0 px-4">View Details</button> --}}
                         </div>
-                        <img src="{{asset('backend/assets/images/apps/01.png')}}" width="100" alt="">
+                        {{-- <img src="{{asset('backend/assets/images/apps/01.png')}}" width="100" alt=""> --}}
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                             <h3 class="mb-0 text-indigo">500</h3>
                             {{-- <button class="btn btn-grd btn-grd-primary rounded-5 border-0 px-4">View Details</button> --}}
                         </div>
-                        <img src="{{asset('backend/assets/images/apps/02.png')}}" width="100" alt="">
+                        {{-- <img src="{{asset('backend/assets/images/apps/02.png')}}" width="100" alt=""> --}}
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                             <h3 class="mb-0 text-indigo">130</h3>
                             {{-- <button class="btn btn-grd btn-grd-primary rounded-5 border-0 px-4">View Details</button> --}}
                         </div>
-                        <img src="{{asset('backend/assets/images/apps/03.png')}}" width="100" alt="">
+                        {{-- <img src="{{asset('backend/assets/images/apps/03.png')}}" width="100" alt=""> --}}
                     </div>
                 </div>
             </div>

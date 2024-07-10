@@ -47,6 +47,8 @@
 
                         <form id="destroy-form {{ $data->id }}" action="{{ route('menu.destroy', $data->id) }}"
                             method="POST" class="d-none">
+
+                            
                             @method('DELETE')
                             @csrf
                         </form>

@@ -29,7 +29,7 @@
             </li> --}}
             <li>
                 <a href="{{ route('user.index') }}">
-                    <div class="parent-icon"><i class="material-icons-outlined">description</i>
+                    <div class="parent-icon"><i class="material-icons-outlined">face_5</i>
                     </div>
                     <div class="menu-title">Daftar Kasir</div>
                 </a>
@@ -54,7 +54,7 @@
                 <a href="{{ route('pembayaran.index') }}">
                     <div class="parent-icon"><i class="material-icons-outlined">description</i>
                     </div>
-                    <div class="menu-title">Pembayaran</div>
+                    <div class="menu-title">Rekapan Pembayaran</div>
                 </a>
             </li>
            

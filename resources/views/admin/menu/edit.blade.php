@@ -3,18 +3,18 @@
 <div class="col-12 col-xl-12">
     <div class="card">
         <div class="card-body p-4">
-            <h5 class="mb-4">Edit Menu {{ $menu->nama_menu }}</h5>
+            <h5 class="mb-4">Edit Menu <span class="text-primary">{{ $menu->menu }}</span></h5>
+
             <form class="row g-3" method="POST" action="{{ route('menu.update', $menu->id) }}" enctype="multipart/form-data">
                 @method('PATCH')
                 @csrf
-                
+
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Nama Menu</label>
                     <div class="position-relative">
                         <input class="form-control mb-3" type="text" name="menu" placeholder="Nama menu" value="{{$menu->menu}}" required>
                     </div>
                 </div>
-
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Kategori</label>
                     <div class="position-relative">
@@ -25,28 +25,12 @@
                         </select>
                     </div>
                 </div>
-                
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Harga</label>
                     <div class="position-relative">
                         <input class="form-control mb-3" type="text" name="harga" placeholder="Harga" value="{{$menu->harga}}" required>
                     </div>
                 </div>
-{{-- 
-                <div class="col-md-4x">
-                    <label for="input13" class="form-label">Pajak</label>
-                    <div class="position-relative">
-                        <input class="form-control mb-3" type="text" name="pajak" placeholder="Pajak" value="{{$menu->pajak}}" required>
-                    </div>
-                </div> --}}
-
-                {{-- <div class="col-md-4x">
-                    <label for="input13" class="form-label">Stok</label>
-                    <div class="position-relative">
-                        <input class="form-control mb-3" type="text" name="stok" placeholder="Nama menu" value="{{$menu->stok}}" required>
-                    </div>
-                </div> --}}
-
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Foto</label>
                     <div class="position-relative">

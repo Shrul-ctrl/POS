@@ -1,4 +1,3 @@
-
 @extends('layouts.backend')
 @section('content')
 <h3 class="mb-0 text-uppercase pb-3">TABEL KATEGORI</h3>
@@ -6,19 +5,14 @@
 <div class="card">
     <div class="card-body">
         @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-                @endif
-        <div class="col-lg-2 pb-3 ms-auto">
-            <a href="{{ route('kategori.create') }}" class="btn btn-primary px-4">
-                Tambah Kategori
-            </a>
+        <div class="alert alert-success">
+            {{ session('success') }}
         </div>
-        <table class="table mb-0 table-striped">
+        @endif
+        <a href="{{ route('kategori.create') }}" class="btn btn-grd btn-primary px-5 mb-2">Tambah Data Kategori</a>
+        <table class="table mb-0 table-striped" id="example">
             <thead>
                 <tr>
-                   
                     <th scope="col">No</th>
                     <th scope="col">Nama Kategori</th>
                     <th scope="col">Aksi</th>
@@ -30,16 +24,12 @@
                     <th scope="row">{{ $loop->index+1 }}</th>
                     <td>{{ $data->nama_kategori }}</td>
                     <td>
-                        {{-- <a href="{{ route('kategori.show', $data->id) }}" class="btn btn-primary gap-2"><i class="material-icons-outlined">search</i></a> --}}
-                        <a href="{{ route('kategori.edit', $data->id) }}" class="btn btn-warning px-5">Edit</a>
-                        <a class="btn ripple btn-danger px-5" href="{{ route('kategori.destroy', $data->id) }}" onclick="event.preventDefault(); document.getElementById('destroy-form {{ $data->id }}').submit();return confirm('Apakah anda yakin ingin menghapus??')">Hapus</a>
-
-                        <form id="destroy-form {{$data->id}}" action="{{ route('kategori.destroy', $data->id) }}"
-                            method="POST" class="d-none">
-                            @method('DELETE')
+                        <form action="{{ route('kategori.destroy', $data->id) }}" method="POST">
                             @csrf
+                            @method('DELETE')
+                            <a href="{{ route('kategori.edit', $data->id) }}" class="btn btn-warning px-5">Edit</a>
+                            <button type="submit" class="btn btn-danger px-5" onclick="return confirm('Apakah anda yakin??')">Hapus</button>
                         </form>
-                    </td>
                 </tr>
                 @endforeach
             </tbody>

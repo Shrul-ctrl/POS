@@ -3,7 +3,7 @@
 <div class="col-12 col-xl-12">
     <div class="card">
         <div class="card-body p-4">
-            <h5 class="mb-4">Edit Kategori {{ $kategori->nama_kategori }}</h5>
+            <h5 class="mb-4">Edit Kategori <span class="text-primary">{{ $kategori->nama_kategori }}</span></h5>
             <form class="row g-3" method="POST" action="{{ route('kategori.update', $kategori->id) }}" enctype="multipart/form-data">
                 @method('PATCH')
                 @csrf

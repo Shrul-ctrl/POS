@@ -18,11 +18,12 @@ class DashboardController extends Controller
     public function index()
     {
         {
-            $pembayaran = Pembayaran::count();
+            $jumlahmenu = Menu::count();
+            $jumlahpembayaran = Pembayaran::count();
             $jumlahuser = User::count();
             $user = User::orderBy('id', 'desc')->get();
             $menu = Menu::orderBy('id', 'desc')->get();
-            return view('admin.dashboard', compact('user','menu','pembayaran','jumlahuser'));
+            return view('admin.dashboard', compact('user','menu','jumlahpembayaran','jumlahuser','jumlahmenu'));
         }
     }
 

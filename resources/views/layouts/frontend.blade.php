@@ -313,11 +313,11 @@
     <script src="{{asset('backend/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
     <script src="{{asset('backend/assets/plugins/metismenu/metisMenu.min.js')}}"></script>
     <script src="{{asset('backend/assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
-        	{{-- <script>
+        	<script>
             $(document).ready(function() {
                 $('#example').DataTable();
               } );
-        </script> --}}
+        </script>
         <script>
             $(document).ready(function() {
                 var table = $('#example2').DataTable( {

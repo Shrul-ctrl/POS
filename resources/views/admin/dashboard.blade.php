@@ -1,8 +1,9 @@
 @extends('layouts.backend')
 @section('content')
 <div class="row">
+    
     <div class="col-12 col-lg-4 col-xxl-4 d-flex">
-        <div class="card rounded-4 w-100 bg">
+        <div class="card rounded-4 w-100 bg ">
             <div class="card-body" style="padding-bottom: 60px">
                 <div class="">
                     <div class="d-flex align-items-center gap-2 mb-2">
@@ -11,8 +12,8 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="">
                             <h3 class="mb-0 text-indigo">Rp 5.000.000</h3>
-                            {{-- <button class="btn btn-grd btn-grd-primary rounded-5 border-0 px-4">View Details</button> --}}
                         </div>
+                        
                         {{-- <img src="{{asset('backend/assets/images/apps/01.png')}}" width="100" alt=""> --}}
                     </div>
                 </div>
@@ -46,7 +47,7 @@
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="">
-                            <h3 class="mb-0 text-indigo">{{$pembayaran}}</h3>
+                            <h3 class="mb-0 text-indigo">{{$jumlahpembayaran}}</h3>
                             {{-- <button class="btn btn-grd btn-grd-primary rounded-5 border-0 px-4">View Details</button> --}}
                         </div>
                         {{-- <img src="{{asset('backend/assets/images/apps/03.png')}}" width="100" alt=""> --}}
@@ -79,12 +80,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($user as $data)
-                                <tr>
-                                    <th scope="row">{{ $loop->index+1 }}</th>
-                                    <td>{{$data->name}}</td>
-                                    <td>{{$data->kontrak}}</td>
-                                </tr>
+                            @foreach ($user as $index => $data)
+                                @if ($data->is_admin == '0')
+                                    <tr>
+                                        <td>{{ $index + 1 }}</td>
+                                        <td>{{ $data->name }}</td>
+                                        <td>{{ $data->kontrak }}</td>
+                                    </tr>
+                                @endif
                             @endforeach
                         </tbody>
                     </table>
@@ -92,6 +95,7 @@
             </div>
         </div>
     </div>
+    
     <div class="col-12 col-xxl-6 d-flex">
         <div class="card rounded-4 w-100">
             <div class="card-body">
@@ -118,7 +122,7 @@
                             <tr>
                                 <th scope="row">{{ $loop->index+1 }}</th>
                                 <td>{{$data->menu}}</td>
-                                <td>{{$data->harga}}</td>
+                                <td>{{$jumlahmenu}}</td>
                             </tr>
                         @endforeach
                         </tbody>

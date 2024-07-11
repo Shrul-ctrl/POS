@@ -55,7 +55,6 @@
                                     <th scope="col">Bayar</th>
                                     <th scope="col">Kembali</th>
                                     <th scope="col">Tanggal Transakasi</th>
-                                    <th scope="col">Tanggal Transakasi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -78,7 +77,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-1 pb-3  ms-auto" style="overflow-y: hidden">
+            <div class="col-lg-1 pb-3 ms-auto" style="overflow-y: hidden">
                 <a href="{{ route('kasir') }}" class="btn btn-danger px-4">
                     Kembali
                 </a>

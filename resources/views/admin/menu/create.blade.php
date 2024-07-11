@@ -37,21 +37,6 @@
                         <input class="form-control mb-3" type="number" name="harga" placeholder="Harga" required>
                     </div>
                 </div>
-
-                {{-- <div class="col-md-4x">
-                    <label for="input13" class="form-label">Pajak</label>
-                    <div class="position-relative ">
-                        <input class="form-control mb-3" type="text" name="pajak" placeholder="Pajak" required>
-                    </div>
-                </div> --}}
-
-                {{-- <div class="col-md-4x">
-                    <label for="input13" class="form-label">Stok</label>
-                    <div class="position-relative ">
-                        <input class="form-control mb-3" type="number" name="stok" placeholder="Stok" required>
-                    </div>
-                </div> --}}
-
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Foto</label>
                     <div class="position-relative ">
@@ -62,6 +47,7 @@
                 <div class="col-md-12">
                     <div class="d-md-flex d-grid align-items-center gap-3">
                         <a href="{{route('menu.index')}}" class="btn btn-danger px-4">Batal</a>
+                        <a href="{{route('menu.create')}}" class="btn btn-grd btn-primary px-4 ">Reset</a>
                         <button type="submit" class="btn btn-success px-4">Simpan</button>
                     </div>
                 </div>

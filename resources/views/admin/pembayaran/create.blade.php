@@ -13,53 +13,42 @@
                 </div>
                 @endif
 
-
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Nama Menu</label>
-                    <div class="position-relative input-icon">
-                            <input class="form-control mb-3" type="text" name="menu" placeholder="Menu" required>
-
+                    <div class="position-relative">
+                        <input class="form-control mb-3" type="text" name="menu" placeholder="Menu" required>
                     </div>
                 </div>
-
-                {{-- <div class="col-md-4x">
-                    <label for="input13" class="form-label">Jumlah</label>
-                    <div class="position-relative input-icon">
-                        <input class="form-control mb-3" type="text" name="jumlah" placeholder="Jumlah" required>
-                    </div>
-                </div> --}}
-
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Subtotal</label>
-                    <div class="position-relative input-icon">
+                    <div class="position-relative">
                         <input class="form-control mb-3" type="text" name="subtotal" placeholder="Subtotal" required>
                     </div>
                 </div>
-
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Pajak</label>
-                    <div class="position-relative input-icon">
+                    <div class="position-relative">
                         <input class="form-control mb-3" type="text" name="pajak" placeholder="Pajak" required>
                     </div>
                 </div>
 
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Total</label>
-                    <div class="position-relative input-icon">
+                    <div class="position-relative">
                         <input class="form-control mb-3" type="text" name="total" placeholder="Total" required>
                     </div>
                 </div>
 
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Bayar</label>
-                    <div class="position-relative input-icon">
+                    <div class="position-relative">
                         <input class="form-control mb-3" type="text" name="bayar" placeholder="Bayar" required>
                     </div>
                 </div>
 
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Kembali</label>
-                    <div class="position-relative input-icon">
+                    <div class="position-relative">
                         <input class="form-control mb-3" type="text" name="kembali" placeholder="Kembali" required>
                     </div>
                 </div>

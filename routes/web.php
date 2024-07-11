@@ -30,7 +30,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], fu
     Route::resource('user', UserController::class);
 });
 
-Route::group(['prefix' => 'kasir'], function () {
+Route::group(['prefix' => 'kasir', 'middleware' => ['auth']], function () {
     Route::get('', [KasirController::class, 'menampilkan'])->name('kasir');
     Route::get('rekapan', [RekapanController::class, 'index'])->name('rekapan');
     Route::get('cetak-rekapan', [RekapanController::class, 'cetakRekapan'])->name('cetak-rekapan');

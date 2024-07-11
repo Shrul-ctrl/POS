@@ -37,11 +37,11 @@
 
     <div class="main-content">
         @include('include.frontend.header')
-            @yield('content')
+        @yield('content')
     </div>
     </main>
-   
 
+    {{-- Agar Masuk Ke tabel pesanan --}}
     <script>
         // Fungsi untuk menampilkan informasi di tabel pesanan
         function tampilkanInfo(menu, harga) {
@@ -155,14 +155,17 @@
                 var row = rows[i];
                 var hargaText = row.cells[2].innerText.replace('Rp. ', '').replace(/\D/g, ''); // Ambil harga dan hapus karakter non-digit
                 var harga = parseFloat(hargaText);
-                subtotal += harga;
+
+                var jumlahElement = row.querySelector('.jumlah-item');
+                var jumlah = parseInt(jumlahElement.textContent);
+
+                subtotal += harga * jumlah;
             }
 
             return subtotal;
         }
 
     </script>
-
     <script>
         // Fungsi untuk menghapus item yang dipilih menggunakan checkbox
         function hapusPesanan() {
@@ -194,8 +197,9 @@
         });
 
     </script>
+    {{-- Agar Masuk Ke tabel pesanan --}}
 
-    {{-- Js.pencarian --}}
+    {{-- pencarian --}}
     <script>
         // Fungsi untuk menangani pencarian
         document.getElementById("searchInput").addEventListener("input", function() {
@@ -218,9 +222,9 @@
         });
 
     </script>
-    {{-- End Js.pencarian --}}
+    {{-- pencarian --}}
 
-    {{-- Js.Kategori --}}
+    {{-- Kategori --}}
     <script>
         function tampilkanMenu(kategori) {
             var cards = document.querySelectorAll(".product-table .card");
@@ -237,9 +241,9 @@
         }
 
     </script>
-    {{-- End Js.Kategori --}}
+    {{-- Kategori --}}
 
-    {{-- Js.menampilkan semua kategori --}}
+    {{-- menampilkan semua kategori --}}
     <script>
         function resetKategori() {
             var cards = document.querySelectorAll(".product-table .card");
@@ -249,9 +253,9 @@
         }
 
     </script>
-    {{-- End Js.menampilkan semua kategori --}}
+    {{-- menampilkan semua kategori --}}
 
-
+    {{-- detai modal pesanan --}}
     <script>
         function tampilkanDetailPesanan() {
             var table = document.getElementById("orderStatusTable");
@@ -302,6 +306,7 @@
         }
 
     </script>
+    {{-- detai modal pesanan --}}
 
     <!--bootstrap js-->
     <script src="{{asset('backend/assets/js/bootstrap.bundle.min.js')}}"></script>
@@ -313,22 +318,24 @@
     <script src="{{asset('backend/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
     <script src="{{asset('backend/assets/plugins/metismenu/metisMenu.min.js')}}"></script>
     <script src="{{asset('backend/assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
-        	<script>
-            $(document).ready(function() {
-                $('#example').DataTable();
-              } );
-        </script>
-        <script>
-            $(document).ready(function() {
-                var table = $('#example2').DataTable( {
-                    lengthChange: false,
-                    buttons: [ 'copy', 'excel', 'pdf', 'print']
-                } );
-             
-                table.buttons().container()
-                    .appendTo( '#example2_wrapper .col-md-6:eq(0)' );
-            } );
-        </script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+
+    </script>
+    <script>
+        $(document).ready(function() {
+            var table = $('#example2').DataTable({
+                lengthChange: false
+                , buttons: ['copy', 'excel', 'pdf', 'print']
+            });
+
+            table.buttons().container()
+                .appendTo('#example2_wrapper .col-md-6:eq(0)');
+        });
+
+    </script>
     <script src="{{asset('backend/assets/plugins/simplebar/js/simplebar.min.js')}}"></script>
     <script src="{{asset('backend/assets/js/main.js')}}"></script>
     {{-- <script>

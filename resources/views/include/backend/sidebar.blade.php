@@ -57,6 +57,13 @@
                     <div class="menu-title">Rekapan Pembayaran</div>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('kasir') }}">
+                    <div class="parent-icon"><i class="material-icons-outlined">apps</i>
+                    </div>
+                    <div class="menu-title">Tampilan Kasir</div>
+                </a>
+            </li>
            
         </ul>
         <!--end navigation-->

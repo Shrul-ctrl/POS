@@ -4,53 +4,53 @@
     
     <div class="col-12 col-lg-4 col-xxl-4 d-flex">
         <div class="card rounded-4 w-100 bg ">
-            <div class="card-body" style="padding-bottom: 60px">
+            <div class="card-body"  >
                 <div class="">
                     <div class="d-flex align-items-center gap-2 mb-2">
                         <h5 class="mb-0">Penjualan Hari ini</h5>
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="">
-                            <h3 class="mb-0 text-indigo">Rp 5.000.000</h3>
+                            <h3 class="mb-0 text-indigo pb-3">Rp 5.000.000</h3>
+                            <a href="{{route('pembayaran.index')}}" class="btn btn-primary rounded-5 border-0 px-4">Lihat Detail</a>
                         </div>
-                        
-                        {{-- <img src="{{asset('backend/assets/images/apps/01.png')}}" width="100" alt=""> --}}
+                        <img src="{{asset('backend/assets/images/leptop/cart.avif')}}" width="150" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="col-12 col-lg-4 col-xxl-4 d-flex">
-        <div class="card rounded-4 w-100 bg">
-            <div class="card-body">
+        <div class="card rounded-4 w-100 bg ">
+            <div class="card-body"  >
                 <div class="">
                     <div class="d-flex align-items-center gap-2 mb-2">
                         <h5 class="mb-0">Jumlah Kasir</h5>
                     </div>
-                    <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center justify-content-between pt-4">
                         <div class="">
-                            <h3 class="mb-0 text-indigo">{{$jumlahuser}}</h3>
-                            {{-- <button class="btn btn-grd btn-grd-primary rounded-5 border-0 px-4">View Details</button> --}}
+                            <h3 class="mb-0 text-indigo pb-3">{{$jumlahuser}}</h3>
+                            <a href="{{route('pembayaran.index')}}" class="btn btn-primary rounded-5 border-0 px-4">Lihat Detail</a>
                         </div>
-                        {{-- <img src="{{asset('backend/assets/images/apps/02.png')}}" width="100" alt=""> --}}
+                        <img src="{{asset('backend/assets/images/leptop/cf.jfif')}}" width="150" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="col-12 col-lg-4 col-xxl-4 d-flex">
-        <div class="card rounded-4 w-100 bg">
-            <div class="card-body">
+        <div class="card rounded-4 w-100 bg ">
+            <div class="card-body"  >
                 <div class="">
                     <div class="d-flex align-items-center gap-2 mb-2">
-                        <h5 class="mb-0">Total Pelanggan</h5>
+                        <h5 class="mb-0">Penjualan Hari ini</h5>
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="">
-                            <h3 class="mb-0 text-indigo">{{$jumlahpembayaran}}</h3>
-                            {{-- <button class="btn btn-grd btn-grd-primary rounded-5 border-0 px-4">View Details</button> --}}
+                            <h3 class="mb-0 text-indigo pb-3">{{$jumlahpembayaran}}</h3>
+                            <a href="{{route('pembayaran.index')}}" class="btn btn-primary rounded-5 border-0 px-4">Lihat Detail</a>
                         </div>
-                        {{-- <img src="{{asset('backend/assets/images/apps/03.png')}}" width="100" alt=""> --}}
+                        <img src="{{asset('backend/assets/images/leptop/p5.jfif')}}" width="150" alt="">
                     </div>
                 </div>
             </div>

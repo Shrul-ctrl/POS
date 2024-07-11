@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pembayaran;
 use App\Models\Menu;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
@@ -18,8 +19,9 @@ class pembayaranController extends Controller
      */
     public function index()
     {
+        $user = User::all();
         $pembayaran = pembayaran::orderBy('id', 'desc')->get();
-        return view('admin.pembayaran.index', compact('pembayaran'));
+        return view('admin.pembayaran.index', compact('pembayaran','user'));
     }
 
     /**
@@ -40,10 +42,11 @@ class pembayaranController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {    
+    {   
         
         $pembayaran = new pembayaran();
         $pembayaran->menu = $request->menu;
+        $pembayaran->id_user = $request->id_user;
         $pembayaran->subtotal = $request->subtotal;
         $pembayaran->pajak = $request->pajak;
         $pembayaran->total = $request->total;

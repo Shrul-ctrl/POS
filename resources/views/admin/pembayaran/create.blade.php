@@ -22,12 +22,12 @@
                     </div>
                 </div>
 
-                <div class="col-md-4x">
+                {{-- <div class="col-md-4x">
                     <label for="input13" class="form-label">Jumlah</label>
                     <div class="position-relative input-icon">
                         <input class="form-control mb-3" type="text" name="jumlah" placeholder="Jumlah" required>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="col-md-4x">
                     <label for="input13" class="form-label">Subtotal</label>

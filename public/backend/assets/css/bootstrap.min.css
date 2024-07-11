@@ -10911,4 +10911,21 @@ textarea.form-control-lg {
   .img-hover-zoom:hover img {
 	transform: scale(1.1);
   }
+
+  .inputan {
+	margin-top: -8px;
+	border: none;
+	text-align: end;
+  }
+
+  .inputan-admin {
+	margin-top: -8px;
+	border: none;
+  }
+
+  .rekapan{
+	padding: 20px;
+	margin-top: -1rem; 
+	height: 58rem;
+  }
 /*# sourceMappingURL=bootstrap.min.css.map */

@@ -1,6 +1,6 @@
 @extends('layouts.backend')
 @section('content')
-<h3 class="mb-0 text-uppercase pb-3">TABEL Pembayaran</h3>
+<h3 class="mb-0 text-uppercase pb-3">Rekapan Pembayaran</h3>
 <hr>
 <div class="card">
     <div class="card-body">
@@ -20,12 +20,14 @@
 
                     <th scope="col">No</th>
                     <th scope="col">Nama Menu</th>
-                    <th scope="col">Jumlah</th>
+                    <th scope="col">Nama Kasir</th>
+                    {{-- <th scope="col">Jumlah</th> --}}
                     <th scope="col">Subtotal</th>
                     <th scope="col">Pajak</th>
                     <th scope="col">Total</th>
                     <th scope="col">Bayar</th>
                     <th scope="col">Kembali</th>
+                    <th scope="col">Tanggal Transakasi</th>
                     <th scope="col">Aksi</th>
                 </tr>
             </thead>
@@ -34,12 +36,14 @@
                 <tr>
                     <th scope="row">{{ $loop->index+1 }}</th>
                     <td>{{ $data->menu }}</td>
-                    <td>{{ $data->jumlah }}</td>
+                    <td>{{ $data->id_user }}</td>
+                    {{-- <td>{{ $data->jumlah }}</td> --}}
                     <td>{{ $data->subtotal }}</td>
                     <td>{{ $data->pajak }}</td>
                     <td>{{ $data->total }}</td>
                     <td>{{ $data->bayar }}</td>
                     <td>{{ $data->kembali }}</td>
+                    <td>{{ $data->created_at }}</td>
 
                     <td>
                         {{-- <a href="{{ route('pembayaran.show', $data->id) }}" class="btn btn-primary gap-2"><i class="material-icons-outlined">search</i></a> --}}

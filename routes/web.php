@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FilterController;
 use App\Http\Controllers\KasirController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\menuController;
@@ -31,9 +32,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], fu
 
 Route::group(['prefix' => 'kasir'], function () {
     Route::get('', [KasirController::class, 'menampilkan'])->name('kasir');
-    Route::get('{id}', [KasirController::class, 'show'])->name('kasirshow');
+    Route::get('rekapan', [RekapanController::class, 'index'])->name('rekapan');
+    Route::get('cetak-rekapan', [RekapanController::class, 'cetakRekapan'])->name('cetak-rekapan');
     Route::get('bayar', [KasirController::class, 'bayar'])->name('bayar');
-    Route::get('search', [KasirController::class, 'search'])->name('search');
+    Route::get('filter', [RekapanController::class,'filter'])->name('filter');
+
 });
 
 Auth::routes();

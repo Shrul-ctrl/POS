@@ -16,13 +16,13 @@ return new class extends Migration
         Schema::create('pembayarans', function (Blueprint $table) {
             $table->id();
             $table->string('menu')->nullable();
-            $table->unsignedBigInteger('id_user')->nullable();
-            $table->integer('jumlah')->nullable();
-            $table->integer('subtotal')->nullable();
-            $table->integer('pajak')->nullable();
-            $table->integer('total')->nullable();
-            $table->integer('bayar')->nullable();
-            $table->integer('kembali')->nullable();
+            $table->string('id_user')->nullable();
+            $table->string('jumlah')->nullable();
+            $table->string('subtotal')->nullable();
+            $table->string('pajak')->nullable();
+            $table->string('total')->nullable();
+            $table->string('bayar')->nullable();
+            $table->string('kembali')->nullable();
             $table->timestamps();
         });
     }

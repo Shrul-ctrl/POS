@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Menu;
+use App\Models\Pembayaran;
 
 
 class DashboardController extends Controller
@@ -17,9 +18,11 @@ class DashboardController extends Controller
     public function index()
     {
         {
+            $pembayaran = Pembayaran::count();
+            $jumlahuser = User::count();
             $user = User::orderBy('id', 'desc')->get();
             $menu = Menu::orderBy('id', 'desc')->get();
-            return view('admin.dashboard', compact('user','menu'));
+            return view('admin.dashboard', compact('user','menu','pembayaran','jumlahuser'));
         }
     }
 

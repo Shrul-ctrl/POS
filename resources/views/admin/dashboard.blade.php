@@ -24,11 +24,11 @@
             <div class="card-body">
                 <div class="">
                     <div class="d-flex align-items-center gap-2 mb-2">
-                        <h5 class="mb-0">Menu Terjual</h5>
+                        <h5 class="mb-0">Jumlah Kasir</h5>
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="">
-                            <h3 class="mb-0 text-indigo">500</h3>
+                            <h3 class="mb-0 text-indigo">{{$jumlahuser}}</h3>
                             {{-- <button class="btn btn-grd btn-grd-primary rounded-5 border-0 px-4">View Details</button> --}}
                         </div>
                         {{-- <img src="{{asset('backend/assets/images/apps/02.png')}}" width="100" alt=""> --}}
@@ -46,7 +46,7 @@
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="">
-                            <h3 class="mb-0 text-indigo">130</h3>
+                            <h3 class="mb-0 text-indigo">{{$pembayaran}}</h3>
                             {{-- <button class="btn btn-grd btn-grd-primary rounded-5 border-0 px-4">View Details</button> --}}
                         </div>
                         {{-- <img src="{{asset('backend/assets/images/apps/03.png')}}" width="100" alt=""> --}}

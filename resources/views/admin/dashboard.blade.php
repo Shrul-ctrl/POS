@@ -11,7 +11,7 @@
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="">
-                            <h3 class="mb-0 text-indigo pb-3">Rp 5.000.000</h3>
+                            <h3 class="mb-0 text-indigo pb-3"><strong>Rp.{{ number_format($totalBayar, 0, ',', '.') }}</strong></h3>
                             <a href="{{route('pembayaran.index')}}" class="btn btn-primary rounded-5 border-0 px-4">Lihat Detail</a>
                         </div>
                         <img src="{{asset('backend/assets/images/leptop/cart.avif')}}" width="150" alt="">

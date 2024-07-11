@@ -19,9 +19,10 @@ class pembayaranController extends Controller
      */
     public function index()
     {
+        $totalBayar = Pembayaran::sum('bayar');
         $user = User::all();
         $pembayaran = pembayaran::orderBy('id', 'desc')->get();
-        return view('admin.pembayaran.index', compact('pembayaran','user'));
+        return view('admin.pembayaran.index', compact('pembayaran','user','totalBayar'));
     }
 
     /**
@@ -53,7 +54,7 @@ class pembayaranController extends Controller
         $pembayaran->bayar = $request->bayar;
         $pembayaran->kembali = $request->kembali;
         $pembayaran->save();
-        return redirect()->route('kasir')->with('success', 'Data berhasil ditambah');
+        return redirect()->route('cetak-struk')->with('success', 'Data berhasil ditambah');
     }
     
 

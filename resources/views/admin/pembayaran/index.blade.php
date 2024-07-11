@@ -40,7 +40,7 @@
                 <td>{{ $data->subtotal }}</td>
                 <td>{{ $data->pajak }}</td>
                 <td>{{ $data->total }}</td>
-                <td>{{ $data->bayar }}</td>
+                <td><strong>Rp.{{ number_format($data->bayar, 0, ',', '.') }}</strong></td>
                 <td>{{ $data->kembali }}</td>
                 <td>{{ $data->created_at }}</td>
                 <td>
@@ -54,6 +54,13 @@
             </tr>
             @endforeach
         </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5"><center>Total Pembayaran</center></td>
+                <td><center>:</center></td>
+                <td colspan="4"><strong>Rp.{{ number_format($totalBayar, 0, ',', '.') }}</strong></td>
+            </tr>
+        </tfoot>
     </table>
 </div>
 </div>

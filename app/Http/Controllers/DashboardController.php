@@ -17,15 +17,16 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        {
-            $jumlahmenu = Menu::count();
-            $jumlahpembayaran = Pembayaran::count();
-            $jumlahuser = User::count();
-            $user = User::orderBy('id', 'desc')->get();
-            $menu = Menu::orderBy('id', 'desc')->get();
-            return view('admin.dashboard', compact('user','menu','jumlahpembayaran','jumlahuser','jumlahmenu'));
-        }
+        $jumlahmenu = Menu::count();
+        $jumlahpembayaran = Pembayaran::count();
+        $jumlahuser = User::count();
+        $user = User::orderBy('id', 'desc')->get();
+        $menu = Menu::orderBy('id', 'desc')->get();
+        $totalBayar = Pembayaran::sum('bayar');
+        
+        return view('admin.dashboard', compact('user', 'menu', 'jumlahpembayaran', 'jumlahuser', 'jumlahmenu', 'totalBayar'));
     }
+    
 
     /**
      * Show the form for creating a new resource.

@@ -40,7 +40,6 @@
         @yield('content')
     </div>
     </main>
-
     {{-- Agar Masuk Ke tabel pesanan --}}
     <script>
         // Fungsi untuk menampilkan informasi di tabel pesanan
@@ -260,34 +259,37 @@
         function tampilkanDetailPesanan() {
             var table = document.getElementById("orderStatusTable");
             var rows = table.getElementsByTagName("tr");
-
-            var namaMenu = "";
+    
+            var namaMenu = ""; // String untuk menyimpan nama menu
             var subtotal = 0;
-
+    
             // Mulai dari baris kedua karena baris pertama adalah header
             for (var i = 1; i < rows.length; i++) {
                 var row = rows[i];
                 var menuCell = row.cells[1];
                 var jumlahElement = row.querySelector('.jumlah-item');
-                var jumlah = parseInt(jumlahElement.textContent);
+                var jumlah = parseInt(jumlahElement.textContent.trim()); // Menggunakan trim untuk membersihkan spasi ekstra
                 var hargaText = row.cells[2].innerText.replace('Rp. ', '').replace(/\D/g, '');
                 var harga = parseFloat(hargaText);
                 var total = harga * jumlah;
                 subtotal += total;
-                namaMenu += `${menuCell.innerText} (${jumlah}), `;
+    
+                // Tambahkan nama menu dengan jumlah ke bawah
+                namaMenu += `${menuCell.innerText} (${jumlah})\n`;
             }
-
+    
             var pajak = subtotal * 0.1; // Misalnya pajak 10%
             var totalAkhir = subtotal + pajak;
-
+    
             // Mengisi nilai input form pada modal
-            document.getElementById("detailMenu").value = namaMenu; // Menggunakan .value untuk input text
+            document.getElementById("detailMenu").value = namaMenu; // Menggunakan .value untuk input textarea
             document.getElementById("detailSubtotal").value = 'Rp. ' + subtotal.toLocaleString('id-ID');
             document.getElementById("detailPajak").value = 'Rp. ' + pajak.toLocaleString('id-ID');
             document.getElementById("detailTotal").value = 'Rp. ' + totalAkhir.toLocaleString('id-ID');
         }
-
     </script>
+    
+    
     <script>
         function prosesBayar() {
             var totalAkhirText = document.getElementById("detailTotal").value.replace('Rp. ', '').replace(/\D/g, '');

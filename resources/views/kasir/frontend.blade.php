@@ -141,10 +141,11 @@
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between">
                                             <h5 class="mb-0 fw-bold">Nama Menu</h5>
-                                            <h5 class="mb-0 fw-bold">
-                                                <input class="inputan mb-3" type="text" name="menu" id="detailMenu" placeholder="Nama Menu">
-                                            </h5>
+                                            <div class="mb-0 fw-bold">
+                                                <textarea class="inputan mb-3 form-control" name="menu" id="detailMenu" rows="5" placeholder="Nama Menu"></textarea>
+                                            </div>
                                         </div>
+                                        
                                         <hr>
                                         <div class="d-flex justify-content-between">
                                             <h5 class="mb-0 fw-bold">Subtotal</h5>
@@ -169,11 +170,11 @@
                                         <div class="d-flex justify-content-between pt-4">
                                             <h5 class="mb-0 fw-bold">Bayar :</h5>
                                             <h5 class="mb-0 fw-bold">
-                                                <input type="number" class="form-control" name="bayar" id="inputBayar" placeholder="Masukkan jumlah uang">
+                                                <input type="number" class="form-control" name="bayar" id="inputBayar" required >
                                             </h5>
                                         </div>
                                         <div style="margin-left:22.5rem;" class="pt-2">
-                                            <button type="button" class="btn btn-primary" id="prosesBayarBtn" onclick="prosesBayar()">Proses</button>
+                                            <button type="button" class="btn btn-primary" id="prosesBayarBtn"  onclick="prosesBayar()">Proses</button>
                                         </div>
                                         <div class="d-flex justify-content-between pt-4">
                                             <h5 class="mb-0 fw-bold">Kembalian :</h5>
@@ -187,7 +188,6 @@
                                             <h6 class="mb-0 fw-bold"> <input class="inputan-admin pb-3" name="id_user" value="{{ Auth::user()->name}}"></h6>
                                         </div>
                                         <div class="modal-footer">
-
                                             <button type="submit" class="btn btn-primary" id="prosesBayarBtn">Bayar</button>
                                         </div>
                                     </div>

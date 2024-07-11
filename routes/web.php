@@ -32,10 +32,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], fu
 
 Route::group(['prefix' => 'kasir', 'middleware' => ['auth']], function () {
     Route::get('', [KasirController::class, 'menampilkan'])->name('kasir');
-    Route::get('rekapan', [RekapanController::class, 'index'])->name('rekapan');
-    Route::get('cetak-rekapan', [RekapanController::class, 'cetakRekapan'])->name('cetak-rekapan');
-    Route::get('bayar', [KasirController::class, 'bayar'])->name('bayar');
     Route::get('filter', [RekapanController::class,'filter'])->name('filter');
+    Route::get('rekapan', [RekapanController::class, 'index'])->name('rekapan');
+    Route::get('cetak-struk', [RekapanController::class, 'cetakStruk'])->name('cetak-struk');
+    Route::get('bayar', [KasirController::class, 'bayar'])->name('bayar');
 
 });
 

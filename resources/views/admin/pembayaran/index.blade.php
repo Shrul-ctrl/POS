@@ -14,6 +14,25 @@
         Tambah Pembayaran
         </a>
     </div> --}}
+    <div class="flex-grow-1">
+        <form action="{{ route('pembayaran.index') }}" method="GET" class="mb-3">
+            <div class="row">
+                <div class="col-md-2">
+                    <label for="tgl_mulai" class="form-label">Mulai Tanggal:</label>
+                    <input type="date" class="form-control" id="tgl_mulai" name="tgl_mulai" value="{{ request('tgl_mulai') }}">
+                </div>
+                <div class="col-md-2">
+                    <label for="tgl_selesai" class="form-label">Akhir Tanggal:</label>
+                    <input type="date" class="form-control" id="tgl_selesai" name="tgl_selesai" value="{{ request('tgl_selesai') }}">
+                </div>
+                <div class="col-md-2 align-self-end">
+                    <button type="submit" class="btn btn-success">Filter</button>
+                    <a href="{{ route('pembayaran.index') }}" class="btn btn-primary">Reset</a>
+                </div>
+            </div>
+        </form>
+        
+    </div>
     <table class="table mb-0 table-striped" id="example2">
         <thead>
             <tr>
@@ -37,30 +56,36 @@
                 <td>{{ $data->menu }}</td>
                 <td>{{ $data->id_user }}</td>
                 {{-- <td>{{ $data->jumlah }}</td> --}}
-                <td>{{ $data->subtotal }}</td>
-                <td>{{ $data->pajak }}</td>
-                <td>{{ $data->total }}</td>
-                <td><strong>Rp.{{ number_format($data->bayar, 0, ',', '.') }}</strong></td>
-                <td>{{ $data->kembali }}</td>
-                <td>{{ $data->created_at }}</td>
+                <td><strong>Rp.{{ number_format($data->subtotal, 0, ',', '.') }}</strong></td>
+                <td><strong>Rp.{{ number_format( $data->pajak, 0, ',', '.') }}</strong></td>
+                <td><strong>Rp.{{ number_format( $data->total, 0, ',', '.') }}</strong></td>
+                <td><strong>Rp.{{ number_format( $data->bayar, 0, ',', '.') }}</strong></td>
+                <td><strong>Rp.{{ number_format( $data->kembali, 0, ',', '.') }}</strong></td>
+                <td><strong>{{ $data->created_at }}</strong></td>
                 <td>
                     <form action="{{ route('pembayaran.destroy', $data->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <a href="{{ route('pembayaran.edit', $data->id) }}" class="btn btn-warning px-5">Edit</a>
-                        <button type="submit" class="btn btn-danger px-5" onclick="return confirm('Apakah anda yakin??')">Hapus</button>
+                        <a href="{{ route('pembayaran.edit', $data->id) }}" class="btn btn-warning px-2">Edit</a>
+                        <button type="submit" class="btn btn-danger px-2" onclick="return confirm('Apakah anda yakin??')">Hapus</button>
                     </form>
                 </td>
             </tr>
             @endforeach
+
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="5"><center>Total Pembayaran</center></td>
-                <td><center>:</center></td>
-                <td colspan="4"><strong>Rp.{{ number_format($totalBayar, 0, ',', '.') }}</strong></td>
+                <td colspan="4">
+                    <center>Total Pembayaran</center>
+                </td>
+                <td>
+                    <center>:</center>
+                </td>
+                <td colspan="5"><strong>Rp.{{ number_format($totalBayar, 0, ',', '.') }}</strong></td>
             </tr>
         </tfoot>
+
     </table>
 </div>
 </div>

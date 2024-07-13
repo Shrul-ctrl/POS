@@ -256,55 +256,59 @@
 
     {{-- detai modal pesanan --}}
     <script>
-        function tampilkanDetailPesanan() {
-            var table = document.getElementById("orderStatusTable");
-            var rows = table.getElementsByTagName("tr");
-    
-            var namaMenu = ""; // String untuk menyimpan nama menu
-            var subtotal = 0;
-    
-            // Mulai dari baris kedua karena baris pertama adalah header
-            for (var i = 1; i < rows.length; i++) {
-                var row = rows[i];
-                var menuCell = row.cells[1];
-                var jumlahElement = row.querySelector('.jumlah-item');
-                var jumlah = parseInt(jumlahElement.textContent.trim()); // Menggunakan trim untuk membersihkan spasi ekstra
-                var hargaText = row.cells[2].innerText.replace('Rp. ', '').replace(/\D/g, '');
-                var harga = parseFloat(hargaText);
-                var total = harga * jumlah;
-                subtotal += total;
-    
-                // Tambahkan nama menu dengan jumlah ke bawah
-                namaMenu += `${menuCell.innerText} (${jumlah})\n`;
-            }
-    
-            var pajak = subtotal * 0.1; // Misalnya pajak 10%
-            var totalAkhir = subtotal + pajak;
-    
-            // Mengisi nilai input form pada modal
-            document.getElementById("detailMenu").value = namaMenu; // Menggunakan .value untuk input textarea
-            document.getElementById("detailSubtotal").value = 'Rp. ' + subtotal.toLocaleString('id-ID');
-            document.getElementById("detailPajak").value = 'Rp. ' + pajak.toLocaleString('id-ID');
-            document.getElementById("detailTotal").value = 'Rp. ' + totalAkhir.toLocaleString('id-ID');
-        }
+       function tampilkanDetailPesanan() {
+    var table = document.getElementById("orderStatusTable");
+    var rows = table.getElementsByTagName("tr");
+
+    var namaMenu = ""; // String untuk menyimpan nama menu
+    var subtotal = 0;
+
+    // Mulai dari baris kedua karena baris pertama adalah header
+    for (var i = 1; i < rows.length; i++) {
+        var row = rows[i];
+        var menuCell = row.cells[1];
+        var jumlahElement = row.querySelector('.jumlah-item');
+        var jumlah = parseInt(jumlahElement.textContent.trim()); // Menggunakan trim untuk membersihkan spasi ekstra
+        var hargaText = row.cells[2].innerText.replace('Rp. ', '').replace(/\D/g, '');
+        var harga = parseFloat(hargaText);
+        var total = harga * jumlah;
+        subtotal += total;
+
+        // Tambahkan nama menu dengan jumlah ke bawah
+        namaMenu += `${menuCell.innerText} (${jumlah})\n`;
+    }
+
+    var pajak = subtotal * 0.10; // Misalnya pajak 10%
+    var totalAkhir = subtotal + pajak;
+
+    // Mengisi nilai input form pada modal tanpa format mata uang
+    document.getElementById("detailMenu").value = namaMenu; // Menggunakan .value untuk input textarea
+    document.getElementById("detailSubtotal").value = subtotal; // Hasil subtotal tanpa format
+    document.getElementById("detailPajak").value = pajak; // Hasil pajak tanpa format
+    document.getElementById("detailTotal").value = totalAkhir; // Hasil total tanpa format
+}
+
     </script>
-    
-    
+
+
     <script>
         function prosesBayar() {
             var totalAkhirText = document.getElementById("detailTotal").value.replace('Rp. ', '').replace(/\D/g, '');
             var totalAkhir = parseFloat(totalAkhirText);
 
             var inputBayar = document.getElementById("inputBayar").value;
-            var bayar = parseFloat(inputBayar);
+            var bayar = parseFloat(inputBayar) || 0; // Default ke 0 jika input tidak valid
 
             var kembalian = bayar - totalAkhir;
 
             if (kembalian >= 0) {
-                document.getElementById("kembalian").value = 'Rp. ' + kembalian.toLocaleString('id-ID'); // Menggunakan .value untuk input text
+                document.getElementById("kembalian").value = kembalian;
             } else {
-                alert('Jumlah uang yang dimasukkan kurang!');
+                document.getElementById("kembalian").value = ''; // Kosongkan jika kurang
+                // Optionally show an alert or message
+                // alert('Jumlah uang yang dimasukkan kurang!');
             }
+
         }
 
     </script>

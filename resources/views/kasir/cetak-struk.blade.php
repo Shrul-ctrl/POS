@@ -29,8 +29,8 @@
                     @foreach ($cetakStruk as $data)
                     <tr>
                         <td>{{ $data->menu }}</td>
-                        <td>{{ $data->harga }}</td>
-                        <td>{{ $data->total }}</td>
+                        {{-- <td><strong>Rp.{{ number_format( $data->harga, 0, ',', '.') }}</strong></td> --}}
+                        <td><strong>Rp.{{ number_format( $data->total, 0, ',', '.') }}</strong></td>
                     </tr>
                 </tbody>
             </table>
@@ -44,17 +44,17 @@
         <tr>
             <td>Subtotal</td>
             <td>:</td>
-            <td>{{$data->subtotal}}</td>
+            <td><strong>Rp.{{ number_format( $data->subtotal, 0, ',', '.') }}</strong></td>
         </tr>
         <tr>
             <td>pajak</td>
             <td>:</td>
-            <td>{{$data->pajak}}</td>
+            <td><strong>Rp.{{ number_format( $data->pajak, 0, ',', '.') }}</strong></td>
         </tr>
         <tr>
             <td>Grand Total</td>
             <td>:</td>
-            <td>{{$data->total}}</td>
+            <td><strong>Rp.{{ number_format( $data->total, 0, ',', '.') }}</strong></td>
         </tr>
 
     </tbody>

@@ -32,7 +32,7 @@ Route::resource('admin/pembayaran', pembayaranController::class);
 
 Route::group(['prefix' => 'kasir', 'middleware' => ['auth']], function () {
     Route::get('', [KasirController::class, 'menampilkan'])->name('kasir');
-    Route::get('filter', [RekapanController::class,'filter'])->name('filter');
+    Route::get('filter', [RekapanController::class, 'filter'])->name('filter');
     Route::get('rekapan', [RekapanController::class, 'index'])->name('rekapan');
     Route::get('bayar', [KasirController::class, 'bayar'])->name('bayar');
     Route::get('cetak-struk', [RekapanController::class, 'cetakStruk'])->name('cetak-struk');

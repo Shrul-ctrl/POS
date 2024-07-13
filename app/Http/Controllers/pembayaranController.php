@@ -17,13 +17,30 @@ class pembayaranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $totalBayar = Pembayaran::sum('bayar');
+        $totalBayar = Pembayaran::sum('total');
         $user = User::all();
-        $pembayaran = pembayaran::orderBy('id', 'desc')->get();
-        return view('admin.pembayaran.index', compact('pembayaran','user','totalBayar'));
+    
+        // Mendapatkan tanggal mulai dan selesai dari request
+        $tgl_mulai = $request->input('tgl_mulai');
+        $tgl_selesai = $request->input('tgl_selesai');
+    
+        // Query untuk mengambil data pembayaran
+        $pembayaran = Pembayaran::orderBy('id', 'desc');
+    
+        // Tambahkan kondisi jika tanggal mulai dan selesai ada
+        if ($tgl_mulai && $tgl_selesai) {
+            $pembayaran->whereBetween('created_at', [$tgl_mulai, $tgl_selesai]);
+        }
+    
+        // Ambil data yang sudah difilter
+        $pembayaran = $pembayaran->get();
+    
+        return view('admin.pembayaran.index', compact('pembayaran', 'user', 'totalBayar'));
     }
+    
+    
 
     /**
      * Show the form for creating a new resource.

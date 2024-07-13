@@ -22,7 +22,7 @@ class DashboardController extends Controller
         $jumlahuser = User::count();
         $user = User::orderBy('id', 'desc')->get();
         $menu = Menu::orderBy('id', 'desc')->get();
-        $totalBayar = Pembayaran::sum('bayar');
+        $totalBayar = Pembayaran::sum('total');
         
         return view('admin.dashboard', compact('user', 'menu', 'jumlahpembayaran', 'jumlahuser', 'jumlahmenu', 'totalBayar'));
     }

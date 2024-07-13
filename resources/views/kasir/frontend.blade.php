@@ -170,12 +170,11 @@
                                         <div class="d-flex justify-content-between pt-4">
                                             <h5 class="mb-0 fw-bold">Bayar :</h5>
                                             <h5 class="mb-0 fw-bold">
-                                                <input type="number" class="form-control" name="bayar" id="inputBayar" required >
+                                                <input type="number" class="form-control" name="bayar" id="inputBayar" required oninput="prosesBayar()">
+
                                             </h5>
                                         </div>
-                                        <div style="margin-left:22.5rem;" class="pt-2">
-                                            <button type="button" class="btn btn-primary" id="prosesBayarBtn"  onclick="prosesBayar()">Proses</button>
-                                        </div>
+                                      
                                         <div class="d-flex justify-content-between pt-4">
                                             <h5 class="mb-0 fw-bold">Kembalian :</h5>
                                             <h5 class="mb-0 fw-bold">

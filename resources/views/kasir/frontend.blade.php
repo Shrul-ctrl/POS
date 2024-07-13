@@ -44,15 +44,15 @@
                         <hr>
                         {{-- kategori --}}
                         <div class="card-body">
-                            <div style=" overflow-x: scroll; overflow-y: hidden; width:100%px; padding-bottom:1rem; border:1px solid white">
-                                <div class="row row-cols-auto g-4 justify-content-space-between">
+                            <div style=" overflow-x: scroll; overflow-y: hidden; width:100%px; padding-bottom:1rem;">
+                                <div class="row row-cols-auto g-2">
                                     @foreach ($kategori as $data)
                                     <div class="col">
-                                        <button type="button" class="btn btn-secondary px-5 p-4" onclick="tampilkanMenu('{{ $data->nama_kategori }}')">{{ $data->nama_kategori }}</button>
+                                        <button type="button" class="btn btn-primary px-5 p-4" onclick="tampilkanMenu('{{ $data->nama_kategori }}')">{{ $data->nama_kategori }}</button>
                                     </div>
                                     @endforeach
                                     <div class="col">
-                                        <button type="button" class="btn btn-secondary px-5 p-4" onclick="resetKategori()">Tampilkan semua kategori</button>
+                                        <button type="button" class="btn btn-danger px-5 p-4" onclick="resetKategori()">Reset</button>
                                     </div>
                                 </div>
                             </div>

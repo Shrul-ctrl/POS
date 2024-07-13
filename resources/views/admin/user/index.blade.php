@@ -25,7 +25,7 @@
             </thead>
             <tbody>
                 @foreach ($user as $index => $data)
-                @if ($data->is_admin == '0')
+                @if ($data->is_admin == '0 ')
                 <tr>
                     <th scope="row">{{ $loop->index+1 }}</th>
                     <td>{{$data->name}}</td>
@@ -35,13 +35,11 @@
                     <td>{{$data->email}}</td>
                     <td>{{$data ->is_admin ? 'Admin' : 'User'}}</td>
                     <td>
-
-                        <a href="{{ route('user.edit', $data->id) }}" class="btn btn-grd btn-warning px-5">Edit</a>
-                        <a class="btn btn-grd btn-danger px-5" href="{{ route('user.destroy', $data->id) }}" onclick="event.preventDefault(); document.getEldementById('destroy-form {{ $data->id }}').submit();return confirm('Apakah anda yakin ingin menghapus??')">Hapus</a>
-
-                        <form id="destroy-form {{ $data->id }}" action="{{ route('user.destroy', $data->id) }}" method="POST" class="d-none">
-                            @method('DELETE')
+                        <form action="{{ route('user.destroy', $data->id) }}" method="POST">
                             @csrf
+                            @method('DELETE')
+                            <a href="{{ route('user.edit', $data->id) }}" class="btn btn-warning px-5">Edit</a>
+                            <button type="submit" class="btn btn-danger px-5" onclick="return confirm('Apakah anda yakin??')">Hapus</button>
                         </form>
                     </td>
                 </tr>

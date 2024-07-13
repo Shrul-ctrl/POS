@@ -28,7 +28,11 @@
                 <div class="col-md-12">
                     <label for="input19" class="form-label">Jenis Kelamin</label>
                     <div class="position-relative">
-                        <input type="text" name="jenis_kelamin" class="form-control" value="{{$user->jenis_kelamin}}" disabled>
+                        <select id="input19" name="jenis_kelamin" class="form-select">
+                            <option selected="">pilih</option>
+                            <option>Laki-Laki</option>
+                            <option>Perempuan</option>
+                        </select>
                     </div>
                     {{-- <select id="input19" name="jenis_kelamin" class="form-select">
                         <option selected="">Pilih...</option>
@@ -71,13 +75,13 @@
                         <input type="password" name="password_confirmation" class="form-control" id="input17" placeholder="Password">
                     </div>
                 </div> --}}
-                {{-- <div class="col-md-12">
+                <div class="col-md-12">
                     <label for="input19" class="form-label">level</label>
                     <select id="input19" name="is_admin" class="form-select">
                         <option value="0" {{ $user->is_admin == 0 ? 'selected' : '' }}>User</option>
                         <option value="1" {{ $user->is_admin ? 'selected' : '' }}>Admin</option>
                     </select>
-                </div> --}}
+                </div>
                 <div class="col-md-12">
                     <div class="d-md-flex d-grid align-items-center gap-3">
                         <a href="{{route('user.index')}}" class="btn btn-danger px-4">Cancel</a>

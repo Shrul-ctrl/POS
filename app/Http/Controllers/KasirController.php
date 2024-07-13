@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class KasirController extends Controller
 {
     public function menampilkan(Request $request){
-        $menu = Menu::all();
+        $menu = Menu::orderBy('id', 'desc')->get();
         $kategori = Kategori::all();
         $pembayaran = Pembayaran::all();
    return view('kasir.frontend', compact('menu','pembayaran','kategori'));

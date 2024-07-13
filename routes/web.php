@@ -26,16 +26,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], fu
     Route::get('', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('kategori', KategoriController::class);
     Route::resource('menu', menuController::class);
-    Route::resource('pembayaran', pembayaranController::class);
     Route::resource('user', UserController::class);
 });
+Route::resource('admin/pembayaran', pembayaranController::class);
 
 Route::group(['prefix' => 'kasir', 'middleware' => ['auth']], function () {
     Route::get('', [KasirController::class, 'menampilkan'])->name('kasir');
     Route::get('filter', [RekapanController::class,'filter'])->name('filter');
     Route::get('rekapan', [RekapanController::class, 'index'])->name('rekapan');
-    Route::get('cetak-struk', [RekapanController::class, 'cetakStruk'])->name('cetak-struk');
     Route::get('bayar', [KasirController::class, 'bayar'])->name('bayar');
+    Route::get('cetak-struk', [RekapanController::class, 'cetakStruk'])->name('cetak-struk');
 
 });
 

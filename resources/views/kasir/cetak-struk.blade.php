@@ -8,71 +8,79 @@
 </head>
 <style>
     table {
-        border-collapse: collapse; /* untuk menghilangkan jarak antar border */
+        border-collapse: collapse;
+        /* untuk menghilangkan jarak antar border */
         width: 100%;
     }
-    table, th, td {
-        padding: 8px; /* menambahkan jarak di dalam sel */
-        text-align: center; /* untuk menengahkan teks */
+
+    table,
+    th,
+    td {
+        padding: 8px;
+        /* menambahkan jarak di dalam sel */
+        text-align: center;
+        /* untuk menengahkan teks */
     }
+
 </style>
 <body>
-    <h3 class="mb-0 text-uppercase"><center>Pos Nongi Kopi</center></h3>
-    <h5 class="mb-0 text-uppercase"><center>Jl.Sukamenak</center></h5>
-    <h5 class="mb-0 text-uppercase"><center>Telpon:08956978016</center></h5>
+    <h3 class="mb-0 text-uppercase">
+        <center>Pos Nongki Kopi</center>
+    </h3>
+    <h5 class="mb-0 text-uppercase">
+        <center>Jl.Sukamenak</center>
+    </h5>
+    <h5 class="mb-0 text-uppercase">
+        <center>Telpon:08956978016</center>
+    </h5>
     <hr>
     <center>
-    <div class="product-table">
-        <div class="table-responsive">
-            <table class="table">
-                <tbody>
-                    @foreach ($cetakStruk as $data)
-                    <tr>
-                        <td>{{ $data->menu }}</td>
-                        {{-- <td><strong>Rp.{{ number_format( $data->harga, 0, ',', '.') }}</strong></td> --}}
-                        <td><strong>Rp.{{ number_format( $data->total, 0, ',', '.') }}</strong></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="product-table">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        @foreach ($cetakStruk as $data)
+                        <tr>
+                            <td>{{ $data->menu }}</td>
+                            <td style="padding-left: 180px"><strong>Rp.{{ number_format( $data->total, 0, ',', '.') }}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-    <hr>
+        <hr>
 
-<br>
-<table>
-    <tbody>
-        <tr>
-            <td>Subtotal</td>
-            <td>:</td>
-            <td><strong>Rp.{{ number_format( $data->subtotal, 0, ',', '.') }}</strong></td>
-        </tr>
-        <tr>
-            <td>pajak</td>
-            <td>:</td>
-            <td><strong>Rp.{{ number_format( $data->pajak, 0, ',', '.') }}</strong></td>
-        </tr>
-        <tr>
-            <td>Grand Total</td>
-            <td>:</td>
-            <td><strong>Rp.{{ number_format( $data->total, 0, ',', '.') }}</strong></td>
-        </tr>
+        <br>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>:</td>
+                    <td><strong>Rp.{{ number_format( $data->subtotal, 0, ',', '.') }}</strong></td>
+                </tr>
+                <tr>
+                    <td>pajak</td>
+                    <td>:</td>
+                    <td><strong>Rp.{{ number_format( $data->pajak, 0, ',', '.') }}</strong></td>
+                </tr>
+                <tr>
+                    <td>Grand Total</td>
+                    <td>:</td>
+                    <td><strong>Rp.{{ number_format( $data->total, 0, ',', '.') }}</strong></td>
+                </tr>
 
-    </tbody>
-</table>
-<br>
-<br>
-<br>
-<hr>
-    <p>{{$data->created_at}}</p>
-    @break
-@endforeach
-</center>
-
-    
-
-
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <p>{{$data->created_at}}</p>
+        @break
+        @endforeach
+    </center>
     <script type="text/javascript">
-            window.print();
+        window.print();
 
     </script>
 </body>

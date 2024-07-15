@@ -25,7 +25,7 @@
             </thead>
             <tbody>
                 @foreach ($user as $index => $data)
-                @if ($data->is_admin == '0 ')
+                @if ($data->is_admin == '0')
                 <tr>
                     <th scope="row">{{ $loop->index+1 }}</th>
                     <td>{{$data->name}}</td>

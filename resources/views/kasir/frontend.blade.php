@@ -5,14 +5,13 @@
         <div class="card w-100 ">
             <div class="card-body">
                 <nav class="navbar navbar-expand align-items-center gap-4">
-                    <h2 class="fw-bold" style="margin-left: 20px">Kategori</h2>
+                    <h2 class="fw-bold" style="margin-left: 20px">Nama Menu</h2>
                     <div class="search-bar flex-grow-1" style="padding-left: 30rem">
                         <div class="position-relative">
                             <input id="searchInput" class="form-control rounded-5 px-5 search-control" type="search" placeholder="Cari Menu">
                             <span class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">search</span>
                         </div>
                     </div>
-
                 </nav>
                 <hr>
                 <div class="product-table">
@@ -37,8 +36,6 @@
                                     </div>
                                 </div>
                                 @endforeach
-
-
                             </div>
                         </div>
                         <hr>
@@ -145,7 +142,6 @@
                                                 <textarea class="inputan mb-3 form-control" name="menu" id="detailMenu" rows="5" placeholder="Nama Menu"></textarea>
                                             </div>
                                         </div>
-                                        
                                         <hr>
                                         <div class="d-flex justify-content-between">
                                             <h5 class="mb-0 fw-bold">Subtotal</h5>
